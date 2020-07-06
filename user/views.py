@@ -1,20 +1,3 @@
-from django.contrib.auth.backends import ModelBackend
-from django.core.handlers.wsgi import WSGIRequest
-from django.db.models import Q
-from django.shortcuts import get_object_or_404
-
-from .models import UserModel, CodeModel
-from rest_framework import viewsets, mixins, generics, status
-from .serializers import UserSerializer, UserRegisterSerializer, ForgetPassword, \
-    EmailSerializer, MyTokenObtainPairSerializer
-from rest_framework.authentication import SessionAuthentication
-from rest_framework_simplejwt.authentication import JWTAuthentication
-from rest_framework_simplejwt.views import TokenObtainPairView
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.response import Response
-from .utils import send_code_email, gen_code
-from datetime import datetime
-from .customExection import CustomExection
 from datetime import datetime
 
 from django.contrib.auth.backends import ModelBackend
